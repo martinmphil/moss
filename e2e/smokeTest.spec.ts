@@ -1,5 +1,14 @@
 import { test, expect } from "@playwright/test";
 
+test.describe("app root", () => {
+  test("smoke test cf London school TDD", async ({ page }) => {
+    await page.goto("/");
+    await expect(page).toHaveTitle(/greenstem/i);
+    await expect(page.locator("#crux")).toHaveText(/crux/i);
+    await expect(page.locator("#emailAddr")).toHaveText(/emailAddr/i);
+  });
+});
+
 // test("has title", async ({ page }) => {
 //   await page.goto("https://playwright.dev/");
 
@@ -16,8 +25,3 @@ import { test, expect } from "@playwright/test";
 //   // Expects the URL to contain intro.
 //   await expect(page).toHaveURL(/.*intro/);
 // });
-
-test("smoke test cf London school TDD", async ({ page }) => {
-  await page.goto("http://localhost:5173/");
-  await expect(page).toHaveTitle(/greenstem/i);
-});

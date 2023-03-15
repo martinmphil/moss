@@ -32,6 +32,16 @@ npx playwright test --project=chromium
 npx playwright test --debug
 ```
 
+```
+npx playwright codegen [localhost_URL]
+```
+
+## Update
+
+```
+npx npm-check-updates
+```
+
 ## User's path
 
 In general a candidate will:
