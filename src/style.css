@@ -1,11 +1,47 @@
+:root {
+  font-family: system-ui, "Ubuntu", "Cabin", "IBM Plex Sans", "Trebuchet MS",
+    sans-serif;
+  --our-serif: "Times New Roman", Times, serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  overflow-wrap: break-word;
+  font-family: var(--font-family1);
+}
+header .login-or-out {
+  text-align: end;
+  padding-right: 1em;
+}
+header .login-or-out a {
+  color: hsl(115, 78%, 73%);
+}
+
 header,
 footer {
-  background-color: green;
+  background-color: hsl(150, 100%, 15%);
+  color: hsl(115, 78%, 73%);
   padding: 0.1em;
+  text-align: center;
 }
 
 footer {
   margin-top: 1em;
+}
+
+main div {
+  font-family: var(--our-serif);
 }
 
 .loading {
