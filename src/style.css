@@ -1,4 +1,5 @@
 :root {
+  box-sizing: border-box;
   font-family: "Times New Roman", Times, serif;
   --sans-serif: system-ui, "Ubuntu", "Cabin", "IBM Plex Sans", "Trebuchet MS",
     sans-serif;
@@ -13,9 +14,6 @@
   --hue2: cornsilk;
   --hue10: hsl(168, 89%, 7%);
 }
-html {
-  box-sizing: border-box;
-}
 *,
 *::before,
 *::after {
@@ -25,7 +23,10 @@ body {
   overflow-wrap: break-word;
   color: var(--hue10);
 }
-header .login-or-out {
+header p[aria-label="authenticate"] {
+  text-align: end;
+}
+footer p[aria-label="authenticate"] {
   text-align: end;
 }
 
@@ -60,10 +61,11 @@ button {
   body {
     padding: 1em;
     margin: auto;
+    background-color: var(--hue10);
   }
   body,
-  header a {
-    background-color: var(--hue10);
+  header a,
+  footer a {
     color: var(--hue2);
   }
   #crux {

@@ -6,8 +6,8 @@
   <title>Candidate page</title>
   <body>
     <header>
-      <p class="login-or-out">
-        <a class="egress" href="/"> Log-out </a>
+      <p aria-label="authenticate">
+        <a href="/"> Log-out </a>
       </p>
     </header>
 
@@ -18,6 +18,12 @@
 
       <div hidden id="crux"><p class="loading">Please wait...</p></div>
     </main>
+
+    <footer>
+      <p hidden aria-label="authenticate">
+        <a href="/"> Log-out </a>
+      </p>
+    </footer>
 
     <noscript>Please enable JavaScript before viewing this page.</noscript>
     <script type="module" src="/src/main.ts"></script>
