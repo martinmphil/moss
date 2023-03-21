@@ -12,7 +12,11 @@
   --hue0: black;
   --hue1: white;
   --hue2: cornsilk;
-  --hue10: hsl(168, 89%, 7%);
+  --hue10: #02221b;
+  --hue11: #004d26;
+  --hue12: #10843b;
+  --hue13: #4abf54;
+  --hue14: #8df084;
 }
 *,
 *::before,
@@ -20,8 +24,9 @@
   box-sizing: inherit;
 }
 body {
+  background-color: var(--hue10);
+  color: var(--hue2);
   overflow-wrap: break-word;
-  color: var(--hue10);
 }
 header p[aria-label="authenticate"] {
   text-align: end;
@@ -30,8 +35,18 @@ footer p[aria-label="authenticate"] {
   text-align: end;
 }
 
-.loading {
-  opacity: 50%;
+header p[aria-label="authenticate"] a,
+footer p[aria-label="authenticate"] a {
+  color: var(--hue2);
+  padding: 0.5em;
+  border: thin solid var(--hue2);
+  border-radius: 0.5em;
+}
+
+header p[aria-label="authenticate"] a:hover,
+footer p[aria-label="authenticate"] a:hover {
+  background-color: white;
+  color: blue;
 }
 
 h1,
@@ -41,6 +56,17 @@ h4,
 h5,
 h6 {
   font-family: var(--sans-serif);
+}
+
+.loading {
+  opacity: 50%;
+}
+
+#crux {
+  background-color: var(--hue1);
+  color: var(--hue0);
+  padding: 1em;
+  border: thin solid var(--hue11);
 }
 
 button {
@@ -61,21 +87,6 @@ button {
   body {
     padding: 1em;
     margin: auto;
-    background-color: var(--hue10);
-  }
-  body,
-  header a,
-  footer a {
-    color: var(--hue2);
-  }
-  #crux {
-    background-color: var(--hue1);
-    border-radius: 1em;
-    color: var(--hue0);
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 0.5em;
   }
 }
 @media only screen and (min-width: 38em) {
