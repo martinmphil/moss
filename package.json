@@ -6,11 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npx playwright test",
+    "test-c": "npx playwright test --project=chromium",
+    "test-launch": "npm run dev & npx playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.31.2",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.4"
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1"
   }
 }

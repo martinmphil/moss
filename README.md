@@ -33,7 +33,7 @@ npx playwright test --debug
 ```
 
 ```
-npx playwright codegen [localhost_URL]
+npx playwright codegen http://localhost:5173/
 ```
 
 ## Update
