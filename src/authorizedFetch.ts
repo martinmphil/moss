@@ -43,8 +43,8 @@ export async function authorizedFetch(
       if (data.body) {
         return data.body;
       }
-      if (data.error) {
-        throw new Error(` Fetching data returned error:- ${data.error}. `);
+      if (data.fault) {
+        throw new Error(` Fetching data returned error:- ${data.fault}. `);
       }
       throw new Error(" Data missing from fetch response. ");
     });
