@@ -123,6 +123,7 @@ dist
 .tern-port
 
 # Playwright
-/test-results/
-/playwright-report/
-/playwright/.cache/
+test-results/
+playwright-report/
+playwright/.cache/
+playwright/.auth/

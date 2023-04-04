@@ -12,6 +12,7 @@
   --hue0: black;
   --hue1: white;
   --hue2: cornsilk;
+  --hue3: blue;
   --hue10: #02221b;
   --hue11: #004d26;
   --hue12: #10843b;
@@ -28,26 +29,26 @@ body {
   color: var(--hue2);
   overflow-wrap: break-word;
 }
-header p[aria-label="authenticate"] {
-  text-align: end;
-}
-footer p[aria-label="authenticate"] {
-  text-align: end;
-}
 
-header p[aria-label="authenticate"] a,
-footer p[aria-label="authenticate"] a {
+header {
+  text-align: end;
+}
+footer {
+  text-align: end;
+}
+/* header p.logout a,
+footer p.logout a {
   color: var(--hue2);
   padding: 0.5em;
   border: thin solid var(--hue2);
   border-radius: 0.5em;
 }
-
-header p[aria-label="authenticate"] a:hover,
-footer p[aria-label="authenticate"] a:hover {
+header p.logout a:hover,
+footer p.logout a:hover {
   background-color: white;
-  color: blue;
-}
+  color: var(--hue3);
+  border: thin solid var(--hue3);
+} */
 
 h1,
 h2,

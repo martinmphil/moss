@@ -36,6 +36,14 @@ npx playwright test --debug
 npx playwright codegen http://localhost:5173/
 ```
 
+```
+npx playwright test candidate.spec.ts:14
+```
+
+```
+npx playwright test --headed --project=chromium --trace on
+```
+
 ## Update
 
 ```
@@ -46,12 +54,16 @@ npx npm-check-updates
 
 In general a candidate will:
 
-(1) visit website  
-(2) authenticate  
-(3) select an exam  
-(4) read questions  
-(5) submit work  
-(6) achieve grade
+- visit website
+  - index.html
+- authenticate
+  - redirect to candidate.html (single page application)
+- select an exam
+- read questions
+- submit work
+- achieve grade
+- log out
+  - redirect to index.html
 
 ## Naming conventions
 
