@@ -1,12 +1,11 @@
 import { sessionStorageOk } from "./sessionStorageOk";
 import { sessionStorageFault } from "./sessionStorageFault";
 import { saveJwt } from "./saveJwt";
-import { fault } from "./fault";
+import { warn } from "./warn";
 
 export function setup() {
   window.onunhandledrejection = (event) => {
-    fault();
-    console.warn(`We had an unhandled promise rejection ${event.reason}`);
+    warn(`We had an unhandled promise rejection ${event.reason}`);
   };
 
   if (sessionStorageOk() === false) {

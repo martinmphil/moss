@@ -1,12 +1,14 @@
-interface InitObj {
-  method: string;
+type TMethod = "GET" | "PUT";
+
+interface IInitObj {
+  method: TMethod;
   headers?: { Authorization: string };
   body?: string;
 }
 
 export async function authorizedFetch(
   path = "",
-  method = "GET",
+  method: TMethod = "GET",
   upload = ""
 ): Promise<unknown> {
   const Authorization = sessionStorage.getItem("Authorization");
@@ -15,10 +17,10 @@ export async function authorizedFetch(
     throw new Error(" Authorization header missing from authorized-fetch. ");
   }
 
-  const host = "https://5jjaawclpd.execute-api.eu-west-1.amazonaws.com/";
-  const url = host + path;
+  const gatewayUrl = "https://0swp0tsvvj.execute-api.eu-west-1.amazonaws.com/";
+  const url = gatewayUrl + path;
 
-  const initObj: InitObj = {
+  const initObj: IInitObj = {
     method,
     headers: {
       Authorization,
@@ -43,10 +45,16 @@ export async function authorizedFetch(
       if (data.body) {
         return data.body;
       }
-      if (data.fault) {
-        throw new Error(` Fetching data returned error:- ${data.fault}. `);
+      if (data.error) {
+        throw new Error(` Fetching data returned error:- ${data.error}. `);
+      }
+      if (data.message) {
+        throw new Error(` Fetching data returned message:- ${data.message}`);
       }
       throw new Error(" Data missing from fetch response. ");
+    })
+    .catch((error) => {
+      throw new Error(` Authorized fetch failed:- ${error}`);
     });
 
   return result;
