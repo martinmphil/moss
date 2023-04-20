@@ -18,7 +18,7 @@ test("real user can log in", async ({ page }) => {
   await page.getByRole("button", { name: "submit" }).click();
 
   await expect(page).toHaveURL("/#");
-  await expect(page.locator("#greeting")).toHaveText(
+  await expect(page.locator("#prelim")).toHaveText(
     /hello enchantedstarcouk@gmail.com/i
   );
   await expect(page).toHaveURL("/#");
