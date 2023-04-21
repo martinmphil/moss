@@ -66,32 +66,30 @@ h6 {
 #crux {
   background-color: var(--hue1);
   color: var(--hue0);
-  padding: 1em;
+  padding: 1rem;
   border: thin solid var(--hue11);
 }
 
 button {
   cursor: pointer;
 }
-/* cf script's: querySelectorAll(".catalog[id]"); querySelectorAll(".choices[id]") */
-#crux article button.catalog[id],
-#crux button.choices[id] {
-  display: block;
-  margin-bottom: 1em;
+#crux article button[data-workflow-id],
+#crux button.choices {
+  margin-bottom: 1rem;
   overflow-wrap: break-word;
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
   width: 100%;
 }
 
 @media only screen and (min-width: 16em) {
   body {
-    padding: 1em;
+    padding: 1rem;
     margin: auto;
   }
 }
 @media only screen and (min-width: 38em) {
   body {
-    width: 38em;
+    width: 38rem;
   }
 }

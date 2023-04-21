@@ -1,8 +1,8 @@
 import { egress } from "./egress";
-import { fault } from "./fault";
-import { fetchCatalog } from "./fetchCatalog";
+import { eventDelegation } from "./eventDelegation";
+import { warn } from "./warn";
+import { fetchListings } from "./fetchListings";
 import { fetchEmail } from "./fetchEmail";
-import { renderCrux } from "./renderCrux";
 import { renderHeader } from "./renderHeader";
 import { setup } from "./setup";
 import { showLoading } from "./showLoading";
@@ -14,21 +14,15 @@ async function main() {
   }
   showLoading();
   renderHeader(egress);
-  const emailAddr = await fetchEmail();
-  if (emailAddr) {
-    const cruxHtml = await fetchCatalog();
-    if (cruxHtml) {
-      renderCrux(cruxHtml);
-    }
-  }
+  await fetchEmail();
+  eventDelegation();
+  await fetchListings();
 }
 
 main().catch((err) => {
-  sessionStorage.clear();
+  let fault = " Main function failed ";
   if (err) {
-    console.warn(
-      `Fault occured ${new Date().toISOString()}:- ${err.toString()}`
-    );
+    fault += `:- ${JSON.stringify(err)}`;
   }
-  fault();
+  warn(fault);
 });

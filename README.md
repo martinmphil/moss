@@ -68,20 +68,20 @@ In general a candidate will:
 ## Naming conventions
 
 - `specialism` eg discipline or subject
-- `catalog` eg list of specialisms
+- `listings` eg list of specialisms
 - `worksheet` eg exam question or instruction
 - `workflow` eg list of worksheets
 - `achieved` eg completed workflow with marks and grade
 
 ## Endpoints
 
-API endpoints provide a catalogue of subjects followed by a series of worksheets each prompting a submission to the database.
+API endpoints provide the candidate's email, then a listings catalogue followed by a series of worksheets each prompting a submission to the database.
 
 The database exposes three authenticated endpoints:
 
 (1) /candidate-email  
  returns candidate email address  
-(2) /catalog  
+(2) /listings  
  returns specialisms (upcoming, ongoing and achieved) as HTML  
 (3) /workbook/{workflowId}  
  returns either achieved or next worksheet as HTML
