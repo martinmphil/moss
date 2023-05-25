@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const gatewayUrl = "https://0swp0tsvvj.execute-api.eu-west-1.amazonaws.com/";
+const gatewayUrl = "https://jwdqdupcfi.execute-api.eu-west-1.amazonaws.com/";
 
 test("initial mark up", async ({ page }) => {
   await page.goto("/");
@@ -9,7 +9,7 @@ test("initial mark up", async ({ page }) => {
   await expect(page.locator("#crux")).toHaveText(/log in/i);
   await expect(page.getByRole("link", { name: "log in" })).toHaveAttribute(
     "href",
-    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?client_id=/i
+    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?.*client_id=/i
   );
 });
 
@@ -28,7 +28,7 @@ test("successful fetch email and log out", async ({ page }) => {
   await expect(page.locator("#crux")).toHaveText(/log in/i);
   await expect(page.getByRole("link", { name: "log in" })).toHaveAttribute(
     "href",
-    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?client_id=/i
+    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?.*client_id=/i
   );
 });
 
@@ -48,7 +48,7 @@ test("unauthorised fetch email", async ({ page }) => {
   await page.getByRole("link", { name: "Reload app" }).click();
   await expect(page.getByRole("link", { name: "log in" })).toHaveAttribute(
     "href",
-    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?client_id=/i
+    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?.*client_id=/i
   );
 });
 
@@ -68,6 +68,6 @@ test("empty fetch email", async ({ page }) => {
   await page.getByRole("link", { name: "Reload app" }).click();
   await expect(page.getByRole("link", { name: "log in" })).toHaveAttribute(
     "href",
-    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?client_id=/i
+    /https:\/\/greenstem-oak.auth.eu-west-1.amazoncognito.com\/login\?.*client_id=/i
   );
 });

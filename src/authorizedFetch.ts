@@ -1,4 +1,4 @@
-type TMethod = "GET" | "PUT";
+type TMethod = "GET" | "POST";
 
 interface IInitObj {
   method: TMethod;
@@ -17,7 +17,7 @@ export async function authorizedFetch(
     throw new Error(" Authorization header missing from authorized-fetch. ");
   }
 
-  const gatewayUrl = "https://0swp0tsvvj.execute-api.eu-west-1.amazonaws.com/";
+  const gatewayUrl = "https://jwdqdupcfi.execute-api.eu-west-1.amazonaws.com/";
   const url = gatewayUrl + path;
 
   const initObj: IInitObj = {
@@ -41,20 +41,22 @@ export async function authorizedFetch(
       }
       return response.json();
     })
-    .then((data) => {
-      if (data.body) {
-        return data.body;
+    .then((dataObj) => {
+      if (dataObj.body) {
+        return dataObj.body;
       }
-      if (data.error) {
-        throw new Error(` Fetching data returned error:- ${data.error}. `);
+      if (dataObj.error) {
+        throw new Error(` Error in authorizedFetch:- ${dataObj.error}. `);
       }
-      if (data.message) {
-        throw new Error(` Fetching data returned message:- ${data.message}`);
+      if (dataObj.message) {
+        throw new Error(
+          ` Message from authorizedFetch is:- ${dataObj.message}. `
+        );
       }
-      throw new Error(" Data missing from fetch response. ");
+      throw new Error(" Response missing from authorizedFetch ");
     })
-    .catch((error) => {
-      throw new Error(` Authorized fetch failed:- ${error}`);
+    .catch((err) => {
+      throw new Error(` Failure in authorizedFetch:- ${err}`);
     });
 
   return result;
