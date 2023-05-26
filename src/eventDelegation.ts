@@ -7,7 +7,18 @@ export async function eventDelegation() {
   crux.addEventListener("click", async (event: MouseEvent) => {
     const dataset = (event.target as HTMLButtonElement).dataset;
 
-    if (dataset?.workflowId) {
+    if (
+      dataset?.workflowId &&
+      dataset?.worksheetId &&
+      dataset?.candidateAnswer
+    ) {
+      showLoading();
+      await fetchWorkbook(
+        dataset?.workflowId,
+        dataset?.worksheetId,
+        dataset?.candidateAnswer
+      );
+    } else if (dataset?.workflowId) {
       showLoading();
       await fetchWorkbook(dataset?.workflowId);
     }
