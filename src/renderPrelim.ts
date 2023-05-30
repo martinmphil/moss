@@ -1,3 +1,3 @@
-export function renderPrelim(html: string) {
-  document.querySelector<HTMLDivElement>("#prelim")!.innerHTML = html;
+export function renderPrelim(markup: string) {
+  document.querySelector<HTMLDivElement>("#prelim")!.innerHTML = markup;
 }

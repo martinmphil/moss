@@ -1,4 +1,4 @@
-export function renderHeader(html: string) {
+export function renderHeader(markup: string) {
   const headerLogInOut = document.querySelector<HTMLDivElement>("header")!;
-  headerLogInOut.innerHTML = html;
+  headerLogInOut.innerHTML = markup;
 }
