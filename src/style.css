@@ -1,23 +1,11 @@
 :root {
   box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
+  font-family: serif;
   --sans-serif: system-ui, "Ubuntu", "Cabin", "IBM Plex Sans", "Trebuchet MS",
     sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
-  --hue0: black;
+  --hue0: #0b0c0c;
   --hue1: white;
-  --hue2: cornsilk;
-  --hue3: blue;
-  --hue10: #02221b;
-  --hue11: #004d26;
-  --hue12: #10843b;
-  --hue13: #4abf54;
-  --hue14: #8df084;
+  --hue3: #003078;
 }
 *,
 *::before,
@@ -25,71 +13,63 @@
   box-sizing: inherit;
 }
 body {
-  background-color: var(--hue10);
-  color: var(--hue2);
   overflow-wrap: break-word;
-}
-
-header {
-  text-align: end;
-}
-footer {
-  text-align: end;
-}
-/* header p.logout a,
-footer p.logout a {
-  color: var(--hue2);
-  padding: 0.5em;
-  border: thin solid var(--hue2);
-  border-radius: 0.5em;
-}
-header p.logout a:hover,
-footer p.logout a:hover {
-  background-color: white;
-  color: var(--hue3);
-  border: thin solid var(--hue3);
-} */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--sans-serif);
 }
 
 .loading {
   opacity: 50%;
 }
 
+header {
+  text-align: end;
+}
+
+footer {
+  padding-top: 2rem;
+  text-align: end;
+  font-family: var(--sans-serif);
+  font-size: small;
+  opacity: 50%;
+}
+footer a {
+  color: darkgreen;
+}
+
+h1 {
+  font-family: var(--sans-serif);
+}
+
 #crux {
-  background-color: var(--hue1);
-  color: var(--hue0);
-  padding: 1rem;
-  border: thin solid var(--hue11);
+  padding-top: 1rem;
 }
 
 button {
   cursor: pointer;
 }
-#crux article button[data-workflow-id],
-#crux button.choices {
-  margin-bottom: 1rem;
-  overflow-wrap: break-word;
+#crux button[data-workflow-id] {
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   width: 100%;
+  background-color: var(--hue3);
+  color: var(--hue1);
+  border-color: #505a5f;
+  box-shadow: 0.1rem 0.1rem 0.1rem #b1b4b6;
+  border-radius: 0.4rem;
+}
+#crux button[data-workflow-id]:hover {
+  background-color: white;
+  border-color: #b1b4b6;
+  color: black;
 }
 
 @media only screen and (min-width: 16em) {
   body {
     padding: 1rem;
-    margin: auto;
   }
 }
 @media only screen and (min-width: 38em) {
-  body {
+  main {
+    margin: auto;
     width: 38rem;
   }
 }
