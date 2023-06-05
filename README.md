@@ -50,21 +50,6 @@ npx playwright test --headed --project=chromium --trace on
 npx npm-check-updates
 ```
 
-## User's path
-
-In general a candidate will:
-
-- visit website
-  - index.html
-- authenticate
-  - redirect to candidate.html (single page application)
-- select an exam
-- read questions
-- submit work
-- achieve grade
-- log out
-  - redirect to index.html
-
 ## Naming conventions
 
 - `specialism` eg discipline or subject
@@ -72,6 +57,18 @@ In general a candidate will:
 - `worksheet` eg exam question or instruction
 - `workflow` eg list of worksheets
 - `achieved` eg completed workflow with marks and grade
+
+## User's path
+
+In general a candidate will:
+
+- visit website
+- authenticate
+- select a workflow
+- read worksheets
+- submit work
+- achieve grade
+- log out
 
 ## Endpoints
 
