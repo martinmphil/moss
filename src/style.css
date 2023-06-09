@@ -1,54 +1,72 @@
 :root {
   box-sizing: border-box;
-  font-family: serif;
+  --serif: serif;
   --sans-serif: system-ui, "Ubuntu", "Cabin", "IBM Plex Sans", "Trebuchet MS",
     sans-serif;
   --hue0: #0b0c0c;
   --hue1: white;
+  --hue2: #f3f2f1;
   --hue3: #003078;
 }
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: inherit;
+}
+main {
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
 }
 body {
   overflow-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  font-family: var(--serif);
 }
-
 .loading {
   opacity: 50%;
 }
-
 header {
+  background-color: var(--hue0);
+  padding: 1rem;
   text-align: end;
 }
-
+header button {
+  background-color: var(--hue0);
+  border: none;
+  border-radius: 0.4rem;
+  color: var(--hue1);
+  padding: 1rem;
+}
+header button:hover {
+  background-color: var(--hue2);
+  color: var(--hue0);
+}
 footer {
-  padding-top: 2rem;
-  text-align: end;
+  padding: 1rem;
   font-family: var(--sans-serif);
   font-size: small;
   opacity: 50%;
+  text-align: end;
 }
 footer a {
-  color: darkgreen;
+  color: #006400;
 }
-
-h1 {
+h1,
+h2 {
   font-family: var(--sans-serif);
 }
-
 #crux {
   padding-top: 1rem;
 }
-
 button {
   cursor: pointer;
 }
 #crux button[data-workflow-id] {
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  font-family: var(--serif);
+  padding: 1rem;
   width: 100%;
   background-color: var(--hue3);
   color: var(--hue1);
@@ -57,16 +75,11 @@ button {
   border-radius: 0.4rem;
 }
 #crux button[data-workflow-id]:hover {
-  background-color: white;
+  background-color: var(--hue2);
   border-color: #b1b4b6;
-  color: black;
+  color: #000;
 }
 
-@media only screen and (min-width: 16em) {
-  body {
-    padding: 1rem;
-  }
-}
 @media only screen and (min-width: 38em) {
   main {
     margin: auto;
