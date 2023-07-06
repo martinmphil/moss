@@ -30,7 +30,7 @@ body {
 }
 header {
   background-color: var(--hue0);
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: end;
 }
 header button {
@@ -38,7 +38,7 @@ header button {
   border: none;
   border-radius: 0.4rem;
   color: var(--hue1);
-  padding: 1rem;
+  padding: 0.5rem;
 }
 header button:hover {
   background-color: var(--hue2);
