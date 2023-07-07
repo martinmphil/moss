@@ -5,7 +5,7 @@ const gatewayUrl = "https://jwdqdupcfi.execute-api.eu-west-1.amazonaws.com/";
 test("initial mark up", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/candidate/i);
-  await expect(page.locator("#prelim")).toHaveText(/ /i);
+  await expect(page.locator("#prelim")).toBeEmpty();
   await expect(page.locator("#crux")).toHaveText(/log in/i);
   await expect(page.getByRole("link", { name: "log in" })).toHaveAttribute(
     "href",
@@ -24,7 +24,7 @@ test("successful fetch email and log out", async ({ page }) => {
   await expect(page).toHaveURL("/#");
   await expect(page.locator("#prelim")).toHaveText(/dummy_email/i);
   await page.getByRole("button", { name: "Log-out" }).click();
-  await expect(page.locator("#prelim")).toHaveText(/ /i);
+  await expect(page.locator("#prelim")).toBeEmpty();
   await expect(page.locator("#crux")).toHaveText(/log in/i);
   await expect(page.getByRole("link", { name: "log in" })).toHaveAttribute(
     "href",
@@ -41,7 +41,7 @@ test("unauthorised fetch email", async ({ page }) => {
     "/#id_token=dummy_id_token.abc.&access_token=dummy_access_token.abc.123&expires_in=72000&token_type=Bearer"
   );
   await expect(page).toHaveURL("/#");
-  await expect(page.locator("#prelim")).toHaveText(/ /i);
+  await expect(page.locator("#prelim")).toBeEmpty();
   await expect(page.locator("#crux")).toHaveText(
     /tell your administrator an error occurred.*:.*:/i
   );
@@ -61,7 +61,7 @@ test("empty fetch email", async ({ page }) => {
     "/#id_token=dummy_id_token.abc.&access_token=dummy_access_token.abc.123&expires_in=72000&token_type=Bearer"
   );
   await expect(page).toHaveURL("/#");
-  await expect(page.locator("#prelim")).toHaveText(/ /i);
+  await expect(page.locator("#prelim")).toBeEmpty();
   await expect(page.locator("#crux")).toHaveText(
     /tell your administrator an error occurred.*:.*:/i
   );
